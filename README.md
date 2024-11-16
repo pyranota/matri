@@ -1,5 +1,5 @@
 # Matri - Universal Matrix Client
-Based on Telegram Web A, packaged for Web, Desktop, Android and IOS
+Based on Telegram Web A, packaged for Desktop, Android and IOS with Tauri
 
 ## Local setup
 
