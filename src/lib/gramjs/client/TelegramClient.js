@@ -93,9 +93,9 @@ class TelegramClient {
      * @param opts
      */
     constructor(session, apiId, apiHash, opts = TelegramClient.DEFAULT_OPTIONS) {
-        if (!apiId || !apiHash) {
-            throw Error('Your API ID or Hash are invalid. Please read "Requirements" on README.md');
-        }
+        // if (!apiId || !apiHash) {
+        //     throw Error('Your API ID or Hash are invalid. Please read "Requirements" on README.md');
+        // }
         const args = { ...TelegramClient.DEFAULT_OPTIONS, ...opts };
         this.apiId = apiId;
         this.apiHash = apiHash;

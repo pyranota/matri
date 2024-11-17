@@ -27,16 +27,18 @@ const Auth: FC<StateProps> = ({
   authState,
 }) => {
   const {
-    returnToAuthPhoneNumber, goToAuthQrCode,
+    returnToAuthPhoneNumber, goToAuthQrCode
   } = getActions();
 
   const isMobile = PLATFORM_ENV === 'iOS' || PLATFORM_ENV === 'Android';
+  // const isMobile = true;
 
   const handleChangeAuthorizationMethod = () => {
     if (!isMobile) {
       goToAuthQrCode();
     } else {
       returnToAuthPhoneNumber();
+
     }
   };
 

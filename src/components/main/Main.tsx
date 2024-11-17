@@ -301,50 +301,50 @@ const Main = ({
   }, []);
 
   // Initial API calls
-  useEffect(() => {
-    if (isMasterTab && isSynced) {
-      updateIsOnline(true);
-      loadConfig();
-      loadAppConfig();
-      loadPeerColors();
-      initMain();
-      loadAvailableReactions();
-      loadAnimatedEmojis();
-      loadNotificationSettings();
-      loadNotificationExceptions();
-      loadAttachBots();
-      loadContactList();
-      loadDefaultTopicIcons();
-      checkAppVersion();
-      loadTopReactions();
-      loadRecentReactions();
-      loadDefaultTagReactions();
-      loadFeaturedEmojiStickers();
-      loadTopInlineBots();
-      loadEmojiKeywords({ language: BASE_EMOJI_KEYWORD_LANG });
-      loadTimezones();
-      loadQuickReplies();
-      loadStarStatus();
-      loadPremiumGifts();
-      loadStarGifts();
-      loadAvailableEffects();
-      loadBirthdayNumbersStickers();
-      loadRestrictedEmojiStickers();
-      loadGenericEmojiEffects();
-      loadSavedReactionTags();
-      loadAuthorizations();
-      loadTopBotApps();
-      loadPaidReactionPrivacy();
-    }
-  }, [isMasterTab, isSynced]);
+  // useEffect(() => {
+  //   if (isMasterTab && isSynced) {
+  //     updateIsOnline(true);
+  //     loadConfig();
+  //     loadAppConfig();
+  //     loadPeerColors();
+  //     initMain();
+  //     loadAvailableReactions();
+  //     loadAnimatedEmojis();
+  //     loadNotificationSettings();
+  //     loadNotificationExceptions();
+  //     loadAttachBots();
+  //     loadContactList();
+  //     loadDefaultTopicIcons();
+  //     checkAppVersion();
+  //     loadTopReactions();
+  //     loadRecentReactions();
+  //     loadDefaultTagReactions();
+  //     loadFeaturedEmojiStickers();
+  //     loadTopInlineBots();
+  //     loadEmojiKeywords({ language: BASE_EMOJI_KEYWORD_LANG });
+  //     loadTimezones();
+  //     loadQuickReplies();
+  //     loadStarStatus();
+  //     loadPremiumGifts();
+  //     loadStarGifts();
+  //     loadAvailableEffects();
+  //     loadBirthdayNumbersStickers();
+  //     loadRestrictedEmojiStickers();
+  //     loadGenericEmojiEffects();
+  //     loadSavedReactionTags();
+  //     loadAuthorizations();
+  //     loadTopBotApps();
+  //     loadPaidReactionPrivacy();
+  //   }
+  // }, [isMasterTab, isSynced]);
 
-  // Initial Premium API calls
-  useEffect(() => {
-    if (isMasterTab && isCurrentUserPremium) {
-      loadDefaultStatusIcons();
-      loadRecentEmojiStatuses();
-    }
-  }, [isCurrentUserPremium, isMasterTab]);
+  // // Initial Premium API calls
+  // useEffect(() => {
+  //   if (isMasterTab && isCurrentUserPremium) {
+  //     loadDefaultStatusIcons();
+  //     loadRecentEmojiStatuses();
+  //   }
+  // }, [isCurrentUserPremium, isMasterTab]);
 
   // Language-based API calls
   useEffect(() => {

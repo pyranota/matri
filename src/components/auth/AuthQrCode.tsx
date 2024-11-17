@@ -64,6 +64,7 @@ const AuthCode: FC<StateProps> = ({
   const continueText = useOldLangString(isConnected ? suggestedLanguage : undefined, 'ContinueOnThisLanguage', true);
   const [isLoading, markIsLoading, unmarkIsLoading] = useFlag();
   const [isQrMounted, markQrMounted, unmarkQrMounted] = useFlag();
+  
 
   const { result: qrCode } = useAsync(async () => {
     const QrCodeStyling = (await ensureQrCodeStyling()).default;
@@ -92,18 +93,19 @@ const AuthCode: FC<StateProps> = ({
   const transitionClassNames = useMediaTransitionDeprecated(isQrMounted);
 
   useLayoutEffect(() => {
-    if (!authQrCode || !qrCode) {
-      return () => {
-        unmarkQrMounted();
-      };
-    }
+    // if (!authQrCode || !qrCode) {
+    //   return () => {
+    //     unmarkQrMounted();
+    //   };
+    // }
 
-    if (!isConnected) {
-      return undefined;
-    }
+    // if (!isConnected) {
+    //   return undefined;
+    // }
 
     const container = qrCodeRef.current!;
-    const data = `${DATA_PREFIX}${authQrCode.token}`;
+    // const data = `${DATA_PREFIX}${authQrCode.token}`;
+    const data = "https://x.org";
 
     if (STRICTERDOM_ENABLED) {
       disableStrict();
@@ -133,8 +135,9 @@ const AuthCode: FC<StateProps> = ({
     }
   }, [isConnected]);
 
+      unmarkIsLoading();
   const handleLangChange = useCallback(() => {
-    markIsLoading();
+    // markIsLoading();
 
     void oldSetLanguage(suggestedLanguage, () => {
       unmarkIsLoading();

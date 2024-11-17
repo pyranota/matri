@@ -63,6 +63,7 @@
     "@statoscope/webpack-plugin": "5.28.2",
     "@stylistic/stylelint-config": "^1.0.1",
     "@stylistic/stylelint-plugin": "^2.1.2",
+    "@tauri-apps/cli": "^2.1.0",
     "@testing-library/jest-dom": "^6.4.5",
     "@twbs/fantasticon": "^3.0.0",
     "@types/croppie": "^2.6.4",

@@ -62,6 +62,11 @@ const App: FC<StateProps> = ({
   theme,
 }) => {
   const { disconnect } = getActions();
+  // const client = sdk.createClient({ baseUrl: "https://matrix.org" });
+  // client.publicRooms((err, data) => {
+  //       console.log("Public Rooms: %s", JSON.stringify(data));
+  //       });
+  // })
 
   const [isInactive, markInactive, unmarkInactive] = useFlag(false);
   const { isMobile } = useAppLayout();
@@ -144,7 +149,7 @@ const App: FC<StateProps> = ({
   } else if (hasPasscode) {
     activeKey = AppScreens.lock;
   } else {
-    page = isMobileOs ? 'authPhoneNumber' : 'authQrCode';
+    page = isMobileOs ? 'authPhoneNumber' : 'authPhoneNumber';
     activeKey = AppScreens.auth;
   }
 
@@ -186,6 +191,7 @@ const App: FC<StateProps> = ({
 
   // eslint-disable-next-line consistent-return
   function renderContent() {
+    console.log(activeKey)
     switch (activeKey) {
       case AppScreens.auth:
         return <Auth />;
@@ -223,7 +229,7 @@ const App: FC<StateProps> = ({
       >
         {renderContent}
       </Transition>
-      {activeKey === AppScreens.auth && isTestServer && <div className="test-server-badge">Test server</div>}
+      {activeKey === AppScreens.auth &&  <div className="test-server-badge">Test server</div>}
     </UiLoader>
   );
 };
